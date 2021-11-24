@@ -1,0 +1,88 @@
+.screenContainer {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  row-gap: 10px;
+}
+
+.counterContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.loaderContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  column-gap: 10px;
+}
+
+.loaderText {
+  font-size: 12px;
+}
+
+.minus {
+  height: 56px;
+  width: 60px;
+  font-weight: 900;
+  font-size: 21px;
+  color: #b24242;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  border-radius: 8px 0 0 8px;
+  border: 1px solid #b24242;
+  cursor: pointer;
+}
+
+.counter {
+  height: 56px;
+  padding-left: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fbe8e8;
+  border: 1px solid #b24242;
+  border-left-width: 0px;
+  border-right-width: 0px;
+}
+
+.counterInput {
+  border: 0px;
+  background-color: #fbe8e8;
+  color: #b24242;
+  font-weight: 900;
+  font-size: 21px;
+}
+
+.counterInput:focus {
+  outline: none;
+}
+
+.plus {
+  height: 56px;
+  width: 60px;
+  font-weight: 900;
+  font-size: 21px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #b24242;
+  border-radius: 0 8px 8px 0;
+  border: 1px solid #b24242;
+  cursor: pointer;
+}
