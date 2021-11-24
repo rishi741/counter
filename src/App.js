@@ -3,13 +3,13 @@ import "./App.css";
 import Count from "./count.js";
 import Load from "./load";
 import axios from "axios";
-const REACT_APP_MAX_VALUE = 2000;
 function App() {
   const [counter, setCounter] = useState(1);
   const [loading, setLoading] = useState(false);
   const inputRef = useRef(null);
-  const maxVal = REACT_APP_MAX_VALUE
-    ? REACT_APP_MAX_VALUE
+
+  const maxVal= process.env.REACT_APP_MAX_VALUE
+    ? process.env.REACT_APP_MAX_VALUE
     : 1000;
 
   const setCounterValue = (value) => {
@@ -72,19 +72,17 @@ function App() {
   };
 
   useEffect(() => {
-    axios
-      .get(
-        "https://interview-8e4c5-default-rtdb.firebaseio.com/front-end/7318019088.json"
-      )
-      .then(function (response) {
-        const data = response.data;
-
+    async function counteri(){
+      try{
+        const co = await fetch("https://interview-8e4c5-default-rtdb.firebaseio.com/front-end/7318019088.json")
+        const data = co.data;
         if (data && data < maxVal) setCounter(data);
         else setCounter(1);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
+      } catch (error) {
+        console.log(error)
+      }
+    };
+    counteri();
   }, [maxVal]);
 
   return (
